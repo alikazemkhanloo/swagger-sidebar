@@ -12,21 +12,27 @@ titles.forEach(element => {
     const text = domElement?.textContent?.trim() || ''
     const a = document.createElement('a')
     a.href=`#${domElement.id}`
-
+    
     a.appendChild(document.createTextNode(text))
-    li.appendChild(a)
+    const temp = document.createElement('div')
+    temp.appendChild(a)
+    temp.className='link'
+    li.appendChild(temp)
+    console.log(li);
+    
     const apiItems = element.querySelectorAll('.opblock')
-    console.log(apiItems);
     const sublist = document.createElement('ul')
-
+    sublist.className='apiList'
     apiItems.forEach(e=>{
         const method = e.querySelector('.opblock-summary-method')?.textContent?.trim()
         const path = e.querySelector('.opblock-summary-path')?.textContent?.trim()
         const id = e.id
         const description = id.split('-')[2]
         const apiPoint = document.createElement('li')
+        apiPoint.className='apiListItem'
         const a = document.createElement('a')
         a.href=`#${id}`
+        a.className='apiLink'
         a.appendChild(document.createTextNode(description))
         apiPoint.appendChild(a)
         sublist.appendChild(apiPoint)

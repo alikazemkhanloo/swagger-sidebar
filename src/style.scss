@@ -1,0 +1,37 @@
+.nav {
+    margin: unset;
+    padding: unset;
+  list-style-type: none;
+  .nav.item{
+      .link{
+          background-color: black;
+          a{
+              color: lightgray;
+          }
+          padding: 15px;
+        }
+  }
+  .apiList {
+    list-style-type: none;
+    // padding: unset;
+    background-color: darkgrey;
+    .apiListItem {
+        padding:10px;
+      .apiLink{
+        color: white;
+      }
+    }
+  }
+}
+
+a{
+    text-decoration: none;
+}
+
+
+#swagger-ui{
+    display: flex
+}
+.swagger-ui{
+    flex:1
+}
