@@ -1,37 +1,52 @@
 .nav {
-    margin: unset;
-    padding: unset;
+  margin: unset;
+  padding: unset;
   list-style-type: none;
-  .nav.item{
-      .link{
-          background-color: black;
-          a{
-              color: lightgray;
-          }
-          padding: 15px;
+  width:280px;
+  .nav.item {
+    cursor: pointer;
+    .link {
+      background-color: black;
+      a {
+        color: lightgray;
+      }
+      padding: 15px;
+    }
+    &.close{
+        .apiList{
+            display: none;
         }
-  }
-  .apiList {
-    list-style-type: none;
-    // padding: unset;
-    background-color: darkgrey;
-    .apiListItem {
-        padding:10px;
-      .apiLink{
-        color: white;
+    }
+    &.open{
+        .apiList{
+            display: block;
+        }
+    }
+    .apiList {
+      list-style-type: none;
+      // padding: unset;
+      background-color: darkgrey;
+      .apiListItem {
+        padding: 10px;
+        .apiLink {
+          color: white;
+        }
       }
     }
   }
+  
 }
 
-a{
-    text-decoration: none;
+a {
+  text-decoration: none;
 }
 
-
-#swagger-ui{
-    display: flex
+#swagger-ui {
+  display: flex;
 }
-.swagger-ui{
-    flex:1
+.swagger-ui {
+  flex: 1;
+}
+body {
+  margin: unset;
 }
