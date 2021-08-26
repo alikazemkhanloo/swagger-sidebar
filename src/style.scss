@@ -8,8 +8,11 @@
     user-select: none;
     cursor: pointer;
     padding: 10px;
-    background-color: black;
+    background-color: #343131;
     color: lightgray;
+    &:hover {
+      background-color: #413c3c;
+    }
   }
   .parts {
     &.close {

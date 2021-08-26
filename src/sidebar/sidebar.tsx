@@ -1,9 +1,31 @@
-import React, { ReactElement, ReactEventHandler } from "react";
+import React, {
+  ReactElement,
+  ReactEventHandler,
+  useEffect,
+  useState,
+} from "react";
 import styles from "../style.scss";
 
-const sections = Array.from(document.querySelectorAll(".opblock-tag-section"));
-
 function Sidebar() {
+  const [sections, setSections] = useState<Element[]>([]);
+  let observer = new MutationObserver((mutations) => {
+    console.log("outside");
+
+    mutations.forEach((mutation) => {
+      console.log("inside");
+      const s = Array.from(document.querySelectorAll(".opblock-tag-section"));
+      setSections(s);
+      observer.disconnect();
+    });
+  });
+
+  useEffect(() => {
+    const loading = document.querySelector("div.loading-container") as Element;
+    console.log("l", loading);
+
+    observer.observe(loading, { childList: true });
+  }, []);
+  console.log(sections);
   const onClick: ReactEventHandler = ({ currentTarget }) => {
     const nextSibling = currentTarget.nextSibling as Element;
     if (nextSibling.classList.contains("open")) {
@@ -41,7 +63,7 @@ function Sidebar() {
                   return (
                     <li className="part">
                       <a
-                        className={`link opblock opblock-${method}`} // opblock class is a trick to get colors from swagger
+                        className={`link opblock opblock-${method?.toLowerCase()}`} // opblock class is a trick to get colors from swagger
                         href={`#${id}`}
                       >
                         <div className="method">
