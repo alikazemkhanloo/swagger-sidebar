@@ -4,6 +4,8 @@
     "declaration": true,
     "outDir": "./lib",
     "strict": true,
+    "jsx": "react",
+    "esModuleInterop":true
   },
   "include": ["src"],
   "exclude": ["node_modules", "**/__tests__/*"]
