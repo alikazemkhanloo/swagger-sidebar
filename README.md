@@ -1,5 +1,17 @@
-# swagger-ui-sidebar-nav
-a simple sidebar to easily navigate through endpoints
+# swagger-sidebar
+
+A simple sidebar to easily navigate through endpoints.
+
 ## Usage
-For now, you have to build it yourself!
-run `yarn build` to build the index.js and style.css to the `lib` folder. then add them to swagger.
+
+just add this script:
+
+```html
+...
+<script src="https://cdn.jsdelivr.net/npm/swagger-sidebar/lib/bundle.js"></script>
+...
+```
+
+## How it works
+
+it waits for the loading component to disappear and then uses querySelector to find the sections on the page. Then it renders a simple sidebar.
