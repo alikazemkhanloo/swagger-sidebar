@@ -3,7 +3,7 @@
 A simple sidebar to easily navigate through endpoints.
 
 
-![swagger sidebar example](https://raw.githubusercontent.com/alikazemkhanloo/swagger-sidebar/master/example.png)
+![swagger sidebar example](./example.png)
 ## Usage
 
 just add this script:
