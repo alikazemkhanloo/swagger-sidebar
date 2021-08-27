@@ -1,6 +1,8 @@
 # swagger-sidebar
 
 A simple sidebar to easily navigate through endpoints.
+
+
 ![swagger sidebar example](https://raw.githubusercontent.com/alikazemkhanloo/swagger-sidebar/master/example.png)
 ## Usage
 
