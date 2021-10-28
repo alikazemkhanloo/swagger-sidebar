@@ -9,6 +9,7 @@ declare global {
 function initSidebar(container: Element, reactroot: Element) {
   const sidebar = document.createElement("div");
   sidebar.id = "sidebar";
+  reactroot.setAttribute("style", "margin-left:280px;");
   container?.insertBefore(sidebar, reactroot);
   ReactDOM.render(App(), document.getElementById("sidebar"));
 }
