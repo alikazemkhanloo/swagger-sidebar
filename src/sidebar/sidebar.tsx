@@ -9,10 +9,7 @@ import styles from "../style.scss";
 function Sidebar() {
   const [sections, setSections] = useState<Element[]>([]);
   let observer = new MutationObserver((mutations) => {
-    console.log("outside");
-
     mutations.forEach((mutation) => {
-      console.log("inside");
       const s = Array.from(document.querySelectorAll(".opblock-tag-section"));
       setSections(s);
       observer.disconnect();
@@ -21,11 +18,12 @@ function Sidebar() {
 
   useEffect(() => {
     const loading = document.querySelector("div.loading-container") as Element;
-    console.log("l", loading);
-
-    observer.observe(loading, { childList: true });
+    if (loading) observer.observe(loading, { childList: true });
+    else {
+      const s = Array.from(document.querySelectorAll(".opblock-tag-section"));
+      setSections(s);
+    }
   }, []);
-  console.log(sections);
   const onClick: ReactEventHandler = ({ currentTarget }) => {
     const nextSibling = currentTarget.nextSibling as Element;
     if (nextSibling.classList.contains("open")) {
